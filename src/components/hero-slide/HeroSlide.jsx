@@ -23,7 +23,7 @@ const HeroSlide = () => {
             const params = {page: 1}
             try {
                 const response = await tmdbApi.getMoviesList(movieType.popular, {params});
-                setMovieItems(response.results.slice(0, 4));
+                setMovieItems(response.results.slice(2, 6));
                 console.log(response);
             } catch {
                 console.log('error');
@@ -39,7 +39,7 @@ const HeroSlide = () => {
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-                autoplay={{delay: 4500}}
+                autoplay={{delay: 7000}}
             >
                 {
                     movieItems.map((item, i) => (
@@ -73,9 +73,9 @@ const HeroSlideItem = props => {
 
         if (videos.results.length > 0) {
             const videSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;
-            modal.querySelector('.modal__content > iframe').setAttribute('src', videSrc);
+            modal.querySelector('.modal-content > iframe').setAttribute('src', videSrc);
         } else {
-            modal.querySelector('.modal__content').innerHTML = 'No trailer';
+            modal.querySelector('.modal-content').innerHTML = 'No trailer';
         }
 
         modal.classList.toggle('active');

@@ -22,19 +22,19 @@ const Header = () => {
   const { pathname } = useLocation();
   const headerRef = useRef(null);
 
-  useEffect(() => {
-    const shrinkHeader = () => {
-      if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
-        headerRef.current.classList.add('shrink');
-      } else {
-        headerRef.current.classList.romove('shrink');
-      }
-    }
-    window.addEventListener('scroll', shrinkHeader);
-    return() => {
-      window.removeEventListener('scroll', shrinkHeader);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const shrinkHeader = () => {
+  //     if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
+  //       headerRef.current.classList.add('shrink');
+  //     } else {
+  //       headerRef.current.classList.romove('shrink');
+  //     }
+  //   }
+  //   window.addEventListener('scroll', shrinkHeader);
+  //   return() => {
+  //     window.removeEventListener('scroll', shrinkHeader);
+  //   }
+  // }, []);
 
   const active = headerNav.findIndex(e => e.path === pathname )
 

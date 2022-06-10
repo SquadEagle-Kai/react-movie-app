@@ -1,0 +1,11 @@
+.movie-list{
+    padding: 0 2rem;
+}
+.swiper-slide{
+    width: 15%;
+}
+@media only screen and (max-width: 480px){
+    .swiper-slide {
+        width: 50%;
+    }
+}
