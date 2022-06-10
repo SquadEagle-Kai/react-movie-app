@@ -11,9 +11,12 @@ import Button from '../button/Buton';
 
 import { category } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 const MovieCard = props => {
-
+    
     const item  = props.item;
 
     const link = '/' + category[props.category] + '/' + item.id;
@@ -22,7 +25,7 @@ const MovieCard = props => {
 
     return (
         <Link to={link}>
-            <div className="movie-card" style={{backgroundImage: `url(${bg})`}}>
+            <div className="movie-card" data-aos="fade-up" data-aos-duration="2500" style={{backgroundImage: `url(${bg})`}}>
                 <Button>
                     <FaPlay />
                 </Button>

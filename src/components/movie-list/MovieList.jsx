@@ -13,6 +13,8 @@ import apiConfig from '../../api/apiConfig';
 
 import MovieCard from '../movie-card/MovieCard';
 
+
+
 const MovieList = props => {
 
     const [items, setItems] = useState([]);
@@ -40,7 +42,7 @@ const MovieList = props => {
     }, []);
 
     return (
-        <div className="movie-list">
+        <div>
             <Swiper
                 grabCursor={true}
                 spaceBetween={10}
